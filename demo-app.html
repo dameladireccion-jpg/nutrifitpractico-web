@@ -168,12 +168,12 @@ body{padding-bottom:24px}
 const CLIENT = {
   id:"web_demo", nombre:"Ana García (ejemplo)", email:"ejemplo@nutrifitpractico.es",
   plan:(new URLSearchParams(location.search).get("plan")||"completo"),               // "nutricion" (39 €) | "entreno" (39 €) | "nutri_entreno" (59 €) | "completo" (79 €)
-  renovarUrl:"https://tally.so/r/81vRBx?src=web_demo",   // check-in y renovación
+  renovarUrl:"/test?src=web_demo",   // check-in y renovación
   peso:70, kcalDia:2100,         // kcalDia = peso x 30 (lo calcula el generador)
   sesionesMeta:12,               // nº total de sesiones que le has dado (el plan acaba al completarlas)
   diasMax:60,                    // tope de seguridad con entreno: si no termina, se cierra igualmente
-  checkinUrl:"https://tally.so/r/81vRBx?src=web_demo",
-  ajusteUrl:"https://tally.so/r/81vRBx?src=web_demo",   // formulario de revisión y ajuste de 28 días
+  checkinUrl:"/test?src=web_demo",
+  ajusteUrl:"/test?src=web_demo",   // formulario de revisión y ajuste de 28 días
   ampliarPrecio:"20 €",           // precio de la ampliación (pago único)
   ampliarUrl:"/#planes",                  // (opcional) si se rellena, manda sobre los enlaces automáticos de abajo                  // enlace de pago (Stripe) para ampliar a nutrición + entreno; si está vacío, abre un correo
   soporte:"contacto@nutrifitpractico.es"

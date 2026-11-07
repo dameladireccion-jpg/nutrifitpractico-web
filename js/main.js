@@ -98,7 +98,7 @@ const REVIEWS=[
   if(!reduce)setInterval(()=>{
     if(!fab.classList.contains("on"))return;
     txt.classList.add("out");
-    setTimeout(()=>{i=(i+1)%MSG.length;txt.textContent=MSG[i];fab.href="https://tally.so/r/81vRBx?src=web_fab_"+(i+1);txt.classList.remove("out");fab.classList.add("wig");setTimeout(()=>fab.classList.remove("wig"),700)},260);
+    setTimeout(()=>{i=(i+1)%MSG.length;txt.textContent=MSG[i];fab.href="/test?src=web_fab_"+(i+1);txt.classList.remove("out");fab.classList.add("wig");setTimeout(()=>fab.classList.remove("wig"),700)},260);
   },4200);
 })();
 

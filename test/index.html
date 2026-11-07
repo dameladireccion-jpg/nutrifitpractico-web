@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Test gratis de 1 minuto | NutriFit Práctico</title>
+<meta name="description" content="Test gratis de 1 minuto de NutriFit Práctico: cuatro preguntas y te enseñamos el plan que encaja contigo.">
+<meta name="robots" content="noindex,follow">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="theme-color" content="#0b0f15">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NutriFit Práctico">
+<meta property="og:title" content="Test gratis de 1 minuto | NutriFit Práctico">
+<meta property="og:description" content="Cuatro preguntas y te enseñamos el plan que encaja contigo. Gratis y sin tarjeta.">
+<meta property="og:image" content="https://nutrifitpractico.es/img/og.png">
+<link rel="icon" type="image/png" href="/img/favicon.png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://tally.so" crossorigin>
+<style>
+:root{--bg:#0b0f15;--fg:#fff;--mute:#aab3bd;--acc:#00ff00;--line:#1f2630}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--fg);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+.wrap{max-width:680px;margin:0 auto;padding:0 16px}
+header{border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;padding-top:8px;padding-bottom:8px}
+header img{display:block;height:40px;width:auto}
+header .brand{font-weight:700}
+header .dom{color:var(--mute);font-size:14px}
+h1{font-size:clamp(1.35rem,5.5vw,1.9rem);line-height:1.2;margin:16px 0 4px}
+.lead{color:var(--mute);margin:0 0 8px}
+.trust{list-style:none;padding:0;margin:0 0 8px;display:flex;flex-wrap:wrap;gap:2px 14px;font-size:14px;color:var(--mute)}
+.trust li::before{content:"✔ ";color:var(--acc)}
+.form{position:relative;min-height:460px}
+.loading{position:absolute;inset:0;display:flex;align-items:flex-start;justify-content:center;padding-top:48px;color:var(--mute);pointer-events:none}
+.loaded .loading{display:none}
+iframe{display:block;width:100%;border:0;position:relative}
+.alt{display:none;font-size:14px;color:var(--mute);margin:8px 0 0}
+.alt.show{display:block}
+a{color:var(--acc)}
+.legal{border-top:1px solid var(--line);margin-top:24px;padding:16px 0 32px;font-size:13px;color:var(--mute)}
+.legal p{margin:4px 0}
+noscript p{padding:16px;border:1px solid var(--line);border-radius:8px}
+.skip{position:absolute;left:-999px}
+.skip:focus{left:8px;top:8px;background:#fff;color:#000;padding:6px}
+</style>
+</head>
+<body>
+<a class="skip" href="#test">Saltar al test</a>
+<header>
+  <div class="wrap">
+    <img src="/img/logo.webp" width="72" height="40" alt="NutriFit Práctico" onerror="this.outerHTML='<span class=brand>NutriFit Práctico</span>'">
+    <span class="dom">nutrifitpractico.es</span>
+  </div>
+</header>
+
+<main class="wrap" id="test">
+  <h1>Tu test gratis de 1 minuto</h1>
+  <p class="lead">Cuatro preguntas y te enseñamos el plan que encaja contigo.</p>
+  <ul class="trust">
+    <li>Gratis y sin tarjeta</li>
+    <li>Personas reales detrás de la pantalla</li>
+  </ul>
+
+  <div class="form" id="formBox">
+    <div class="loading" aria-hidden="true">Cargando tu test…</div>
+    <iframe id="tallyFrame"
+      data-tally-src="https://tally.so/embed/81vRBx?hideTitle=1&transparentBackground=1&dynamicHeight=1"
+      width="100%" height="460" title="Test gratis de NutriFit Práctico"
+      referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    <noscript><p>Para hacer el test aquí necesitas activar JavaScript. También puedes <a href="https://tally.so/r/81vRBx?src=web_test_nojs" rel="noopener">abrirlo en una pestaña nueva</a>.</p></noscript>
+  </div>
+  <p class="alt" id="alt">¿No se ve el test? <a id="altLink" href="https://tally.so/r/81vRBx?src=web_test_alt" rel="noopener">Ábrelo en una pestaña nueva</a>.</p>
+</main>
+
+<footer class="legal">
+  <div class="wrap">
+    <p>Este test se aloja en Tally, nuestro proveedor de formularios. Más información en la <a href="/privacidad.html">Política de privacidad</a>.</p>
+    <p>NutriFit Práctico · <a href="mailto:contacto@nutrifitpractico.es">contacto@nutrifitpractico.es</a> · <a href="https://www.instagram.com/nutrifitpractico" rel="noopener">@nutrifitpractico</a> · <a href="/aviso-legal.html">Aviso legal</a></p>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // 1) Leer ?src= (cartel_picassent, web_hero, ...). Saneado: minúsculas, solo a-z 0-9 _ - (máx. 40). Sin src -> web_test.
+  var src = "";
+  try {
+    src = (new URLSearchParams(location.search).get("src") || "").toLowerCase().replace(/[^a-z0-9_-]/g, "").slice(0, 40);
+  } catch (e) {}
+  if (!src) src = "web_test";
+  // 2) Dejar en la barra SOLO el src saneado: el widget de Tally reenvía los parámetros de la página,
+  //    así nunca le llega el valor sin sanear.
+  try {
+    var u = new URL(location.href);
+    u.searchParams.set("src", src);
+    history.replaceState(null, "", u.pathname + u.search + u.hash);
+  } catch (e) {}
+
+  var box = document.getElementById("formBox");
+  var f = document.getElementById("tallyFrame");
+  var alt = document.getElementById("alt");
+  var enc = encodeURIComponent(src);
+  document.getElementById("altLink").href = "https://tally.so/r/81vRBx?src=" + enc;
+
+  // 3) src explícito al iframe (mismo valor que reenvía el widget).
+  var tallyUrl = f.getAttribute("data-tally-src") + "&src=" + enc;
+  f.setAttribute("data-tally-src", tallyUrl);
+
+  // 4) Señales de carga y plan de emergencia.
+  f.addEventListener("load", function () { if (f.getAttribute("src")) box.classList.add("loaded"); });
+  setTimeout(function () { if (!box.classList.contains("loaded")) alt.classList.add("show"); }, 8000);
+
+  // 5) Widget oficial de Tally (carga el iframe y ajusta la altura). Si falla/bloqueado: iframe directo con altura fija.
+  var s = document.createElement("script");
+  s.src = "https://tally.so/widgets/embed.js";
+  s.async = true;
+  s.onload = function () { if (window.Tally) { Tally.loadEmbeds(); } else { direct(); } };
+  s.onerror = direct;
+  document.body.appendChild(s);
+  function direct() {
+    f.height = 720;
+    f.src = tallyUrl;
+    alt.classList.add("show");
+  }
+})();
+</script>
+</body>
+</html>
